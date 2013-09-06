@@ -1,0 +1,12 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1" name="public" homePage="sv1#page1" layout:style="WebRatio" landmarks="sv1#page6">
+  <OperationUnits>
+    <SelectorUnit gr:x="330" gr:y="170" id="sv1#seu1" name="Obtener medicamento" entity="ent1">
+      <Selector id="sv1#seu1#su3" defaultPolicy="fill" booleanOperator="and">
+        <AttributesCondition id="sv1#seu1#su3#acond1" name="AttCondition1" predicate="eq" booleanOperator="or" implied="false" attributes="ent1#att5"/>
+      </Selector>
+      <KOLink id="sv1#seu1#kln1" name="KOLink1" to="sv1#page1#mssu1" automaticCoupling="true" gr:bendpoints="-165,-1,0,144"/>
+      <OKLink id="sv1#seu1#oln1" name="OKLink1" to="sv1#page3#inu1" automaticCoupling="true"/>
+    </SelectorUnit>
+    <LoginUnit id="sv1#lgu4" name="Login" gr:x="685" gr:y="25"/>
+  </OperationUnits>
+</SiteView>

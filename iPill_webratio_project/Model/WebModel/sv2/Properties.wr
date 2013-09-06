@@ -1,0 +1,56 @@
+<SiteView xmlns:gr="http://www.webratio.com/2006/WebML/Graph" id="sv2" name="centro" protected="true" secure="false" homePage="sv2#page5" landmarks="sv2#page4 sv2#page5">
+  <OperationUnits>
+    <ConnectUnit gr:x="600" gr:y="300" id="sv2#cnu1" name="solicitar medicamento" relationship="rel1#role2">
+      <SourceSelector id="sv2#cnu1#su5" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#cnu1#su5#kcond1" name="KeyCondition1" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#cnu1#su6" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#cnu1#su6#kcond2" name="KeyCondition2" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#cnu1#oln2" name="OKFlow2" to="sv2#page5" automaticCoupling="true" gr:bendpoints="-134,41,236,111"/>
+    </ConnectUnit>
+    <GetUnit gr:x="885" gr:y="250" id="sv2#gtu2" name="logUser" contextParameters="UserCtxParam" linkOrder="sv2#gtu2#ln4 sv2#gtu2#ln6">
+      <Link id="sv2#gtu2#ln4" name="Flow4" to="sv2#cnu1" type="transport" validate="true">
+        <LinkParameter id="sv2#gtu2#ln4#par3" name="UserCtxParam.oid_KeyCondition2 [oid] [CentroReceptor] [Target]" source="sv2#gtu2.UserCtxParam" target="sv2#cnu1#su6#kcond2.userOID"/>
+      </Link>
+      <Link id="sv2#gtu2#ln6" name="Flow6" to="sv2#dcnu1" type="transport" validate="true">
+        <LinkParameter id="sv2#gtu2#ln6#par5" name="UserCtxParam.oid_KeyCondition4 [oid] [CentroReceptor] [Target]" source="sv2#gtu2.UserCtxParam" target="sv2#dcnu1#su8#kcond4.userOID"/>
+      </Link>
+    </GetUnit>
+    <DisconnectUnit gr:x="595" gr:y="145" id="sv2#dcnu1" name="anular solicitud medicamento" relationship="rel1#role2">
+      <SourceSelector id="sv2#dcnu1#su7" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dcnu1#su7#kcond3" name="KeyCondition3" predicate="in" implied="false"/>
+      </SourceSelector>
+      <TargetSelector id="sv2#dcnu1#su8" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#dcnu1#su8#kcond4" name="KeyCondition4" predicate="in" implied="false"/>
+      </TargetSelector>
+      <OKLink id="sv2#dcnu1#oln3" name="OKFlow3" to="sv2#page5" automaticCoupling="true" gr:bendpoints="-127,77,238,-8"/>
+    </DisconnectUnit>
+    <SelectorUnit gr:x="190" gr:y="0" id="sv2#seu2" name="profileData" entity="ent2">
+      <Link id="sv2#seu2#ln8" name="Flow8" to="sv2#page4#enu2" type="transport" validate="true">
+        <LinkParameter id="sv2#seu2#ln8#par10" name="direccion_direccion" source="ent2#att4Array" target="sv2#page4#enu2#fld2_slot"/>
+        <LinkParameter id="sv2#seu2#ln8#par11" name="email_email" source="emailArray" target="sv2#page4#enu2#fld10_slot"/>
+        <LinkParameter id="sv2#seu2#ln8#par12" name="oid_Key Condition [oid]" source="userOIDArray" target="sv2#page4#enu2.userOID"/>
+        <LinkParameter id="sv2#seu2#ln8#par13" name="latitud_latitud" source="ent2#att3Array" target="sv2#page4#enu2#fld4_slot"/>
+        <LinkParameter id="sv2#seu2#ln8#par14" name="logitud_logitud" source="ent2#att6Array" target="sv2#page4#enu2#fld5_slot"/>
+        <LinkParameter id="sv2#seu2#ln8#par15" name="password_password" source="passwordArray" target="sv2#page4#enu2#fld9_slot"/>
+        <LinkParameter id="sv2#seu2#ln8#par16" name="razonSocial_razonSocial" source="ent2#att2Array" target="sv2#page4#enu2#fld3_slot"/>
+        <LinkParameter id="sv2#seu2#ln8#par17" name="userName_userName" source="userNameArray" target="sv2#page4#enu2#fld8_slot"/>
+      </Link>
+      <Selector id="sv2#seu2#su9" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#seu2#su9#kcond5" name="KeyCondition5" predicate="in" implied="false"/>
+      </Selector>
+    </SelectorUnit>
+    <GetUnit gr:x="30" gr:y="10" id="sv2#gtu3" name="LogUser" contextParameters="UserCtxParam" linkOrder="sv2#gtu3#ln10">
+      <Link id="sv2#gtu3#ln10" name="Flow10" to="sv2#seu2" type="transport" validate="true">
+        <LinkParameter id="sv2#gtu3#ln10#par9" name="UserCtxParam.oid_KeyCondition5 [oid]" source="sv2#gtu3.UserCtxParam" target="sv2#seu2#su9#kcond5.userOID"/>
+      </Link>
+    </GetUnit>
+    <ModifyUnit gr:x="590" gr:y="5" id="sv2#mfu1" name="updateProfileData" entity="ent2">
+      <Selector id="sv2#mfu1#su10" defaultPolicy="fill" booleanOperator="and">
+        <KeyCondition id="sv2#mfu1#su10#kcond6" name="KeyCondition6" predicate="in" implied="false"/>
+      </Selector>
+      <OKLink id="sv2#mfu1#oln4" name="OKFlow4" to="sv2#page4" automaticCoupling="true" gr:bendpoints="-87,39,98,49"/>
+    </ModifyUnit>
+  </OperationUnits>
+</SiteView>

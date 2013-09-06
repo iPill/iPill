@@ -1,0 +1,34 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" id="sv1#page6" name="Login" gr:x="530" gr:y="-10" landmark="true">
+  <ContentUnits>
+    <EntryUnit id="sv1#page6#enu4" name="loginForm" linkOrder="sv1#page6#enu4#ln9" gr:x="0" gr:y="0">
+      <Field id="sv1#page6#enu4#fld6" name="Usuario" type="string" modifiable="true"/>
+      <Field id="sv1#page6#enu4#fld7" name="Contrase&#241;a" type="password" modifiable="true"/>
+      <Link id="sv1#page6#enu4#ln9" name="Entrar" to="sv1#lgu4" type="normal" validate="true">
+        <LinkParameter id="sv1#page6#enu4#ln9#par7" name="Usuario_Username" source="sv1#page6#enu4#fld6" target="sv1#lgu4.username"/>
+        <LinkParameter id="sv1#page6#enu4#ln9#par8" name="Contrase&#241;a_Password" source="sv1#page6#enu4#fld7" target="sv1#lgu4.password"/>
+      </Link>
+    </EntryUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv1#page6#enu4">
+          <layout:Field field="sv1#page6#enu4#fld6"/>
+          <layout:Field field="sv1#page6#enu4#fld7"/>
+          <layout:Link link="sv1#page6#enu4#ln9"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>

@@ -1,0 +1,66 @@
+<Page xmlns:gr="http://www.webratio.com/2006/WebML/Graph" xmlns:layout="http://www.webratio.com/2006/WebML/Layout" gr:x="130" gr:y="145" id="sv2#page5" name="Gesti&#243;n solicitudes medicamentos" landmark="true">
+  <ContentUnits>
+    <MultiChoiceIndexUnit gr:x="150" gr:y="0" id="sv2#page5#mciu1" name="medicamentos solicitados" entity="ent1" displayAttributes="ent1#att5" linkOrder="sv2#page5#mciu1#ln5">
+      <Selector id="sv2#page5#mciu1#su1" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page5#mciu1#su1#rcond1" name="RoleCondition1" role="rel1#role1" predicate="in" implied="false"/>
+      </Selector>
+      <Link id="sv2#page5#mciu1#ln5" name="Anular solicitud" to="sv2#dcnu1" type="normal" validate="true">
+        <LinkParameter id="sv2#page5#mciu1#ln5#par4" name="Checked oid_KeyCondition3 [oid] [Medicamento] [Source]" source="ent1#att1Checked" target="sv2#dcnu1#su7#kcond3.ent1#att1"/>
+      </Link>
+    </MultiChoiceIndexUnit>
+    <GetUnit gr:x="0" gr:y="10" id="sv2#page5#gtu1" name="logUser" contextParameters="UserCtxParam">
+      <Link id="sv2#page5#gtu1#ln7" name="Flow7" to="sv2#page5#mciu1" type="transport" validate="true">
+        <LinkParameter id="sv2#page5#gtu1#ln7#par6" name="UserCtxParam.oid_RoleCondition1 [oid]" source="sv2#page5#gtu1.UserCtxParam" target="sv2#page5#mciu1#su1#rcond1.userOID"/>
+      </Link>
+      <Link id="sv2#page5#gtu1#ln2" name="Flow7" to="sv2#page5#mciu2" type="transport" validate="true">
+        <LinkParameter id="sv2#page5#gtu1#ln2#par2" name="UserCtxParam.oid_RoleCondition1 [oid]" source="sv2#page5#gtu1.UserCtxParam" target="sv2#page5#mciu2#su2#rcond3.userOID"/>
+      </Link>
+    </GetUnit>
+    <MultiChoiceIndexUnit id="sv2#page5#mciu2" name="medicamentos disponibles" gr:x="140" gr:y="125" entity="ent1" displayAttributes="ent1#att5" linkOrder="sv2#page5#mciu2#ln3">
+      <Selector id="sv2#page5#mciu2#su2" defaultPolicy="fill" booleanOperator="and">
+        <RelationshipRoleCondition id="sv2#page5#mciu2#su2#rcond3" name="RoleCondition1" role="rel1#role1" predicate="notIn" implied="false"/>
+      </Selector>
+      <Link id="sv2#page5#mciu2#ln3" name="Solicitar medicamento" to="sv2#cnu1" automaticCoupling="true" type="normal" validate="true"/>
+    </MultiChoiceIndexUnit>
+  </ContentUnits>
+  <layout:Grid containerType="grid">
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page5#mciu1">
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Link link="sv2#page5#mciu1#ln5"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+    <layout:Row>
+      <layout:Cell colspan="12">
+        <layout:Unit unitId="sv2#page5#mciu2">
+          <layout:Attribute attribute="ent1#att5"/>
+          <layout:Link link="sv2#page5#mciu2#ln3"/>
+        </layout:Unit>
+      </layout:Cell>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+      <layout:Cell/>
+    </layout:Row>
+  </layout:Grid>
+</Page>
